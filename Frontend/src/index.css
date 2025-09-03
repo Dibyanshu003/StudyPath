@@ -1,0 +1,131 @@
+/* Tailwind v4 base import */
+@import "tailwindcss";
+
+@theme {
+  --color-brand-500: #6366f1; /* indigo-500 */
+  --color-brand-400: #818cf8;
+  --color-success: #10b981; /* emerald-500 */
+  --color-warn: #f59e0b; /* amber-500 */
+}
+
+:root {
+  color-scheme: light dark;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200;
+}
+
+/* Utility helpers */
+.card {
+  @apply p-4 rounded-lg border border-slate-200 dark:border-slate-800;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center px-3 py-2 rounded-md font-medium;
+}
+.btn-primary {
+  @apply bg-brand-500 text-white hover:opacity-90;
+}
+.btn-ghost {
+  @apply bg-slate-200/70 dark:bg-slate-800 hover:opacity-90;
+}
+
+/* Link styles for sidebar */
+.nav-item {
+  @apply block px-3 py-2 rounded-md transition;
+}
+.nav-item--active {
+  @apply bg-brand-500/10 text-brand-500;
+}
+.nav-item--idle {
+  @apply hover:bg-slate-200/60 dark:hover:bg-slate-800;
+}
+
+/* Heatmap cells */
+.react-calendar-heatmap rect {
+  rx: 3;
+  ry: 3;
+  shape-rendering: crispEdges;
+}
+
+/* Empty day (no study) */
+.react-calendar-heatmap .heat-0 {
+  fill: #0e1726;
+  stroke: rgba(148, 163, 184, 0.22);
+  stroke-width: 1;
+}
+.dark .react-calendar-heatmap .heat-0 {
+  fill: #0d1422;
+  stroke: rgba(148, 163, 184, 0.22);
+}
+
+/* Active days: green ramp */
+.react-calendar-heatmap .heat-1 {
+  fill: #86efac;
+  stroke: rgba(148, 163, 184, 0.22);
+  stroke-width: 1;
+}
+.react-calendar-heatmap .heat-2 {
+  fill: #4ade80;
+  stroke: rgba(148, 163, 184, 0.22);
+  stroke-width: 1;
+}
+.react-calendar-heatmap .heat-3 {
+  fill: #22c55e;
+  stroke: rgba(148, 163, 184, 0.22);
+  stroke-width: 1;
+}
+.react-calendar-heatmap .heat-4 {
+  fill: #16a34a;
+  stroke: rgba(148, 163, 184, 0.22);
+  stroke-width: 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+/* ApexCharts */
+.apexcharts-tooltip,
+.apexcharts-tooltip-title {
+  background: #111827 !important; /* slate-900 */
+  color: #ffffff !important;
+  border: 1px solid #475569 !important; /* slate-600 */
+}
+.apexcharts-tooltip * {
+  color: #ffffff !important;
+}
+
+/* Recharts */
+.recharts-default-tooltip {
+  background: #111827 !important;
+  border: 1px solid #475569 !important;
+}
+.recharts-default-tooltip,
+.recharts-tooltip-item,
+.recharts-tooltip-label {
+  color: #ffffff !important;
+}
+
+/* Chart.js */
+.chartjs-tooltip {
+  background: #111827 !important;
+  color: #ffffff !important;
+  border: 1px solid #475569 !important;
+}

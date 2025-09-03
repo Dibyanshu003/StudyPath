@@ -1,0 +1,39 @@
+📦server/
+├── 📁config/               # DB & server config (MongoDB, env, etc.)
+│   └── db.js
+│
+├── 📁controllers/          # Route logic (business logic)
+│   └── userController.js
+│   └── subjectController.js
+│   └── sessionController.js
+│   └── goalController.js
+│   └── streakController.js
+│   └── aiController.js
+│
+├── 📁models/               # Mongoose schemas
+│   └── User.js
+│   └── Subject.js
+│   └── StudySession.js
+│   └── Goal.js
+│   └── Streak.js
+│   └── AIFeedback.js
+│
+├── 📁routes/               # API routes
+│   └── userRoutes.js
+│   └── subjectRoutes.js
+│   └── sessionRoutes.js
+│   └── goalRoutes.js
+│   └── streakRoutes.js
+│   └── aiRoutes.js
+│
+├── 📁middleware/           # Auth, error handlers, etc.
+│   └── authMiddleware.js
+│   └── errorMiddleware.js
+│
+├── 📁utils/                # Helper functions (AI, email, etc.)
+│   └── ai.js
+│   └── mailSender.js
+│
+├── .env                    # Environment variables (MONGO_URI, JWT_SECRET, etc.)
+├── server.js               # Entry point (Express app)
+└── package.json            # Dependencies
