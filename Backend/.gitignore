@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+logs/
+*.log
+.env
+.env.*.local
+
+# (if you ever store local uploads; not recommended in prod)
+uploads/
