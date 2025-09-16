@@ -29,6 +29,7 @@ const allowed = [
   "http://localhost:3000", // keep if you sometimes open frontend on 3000
   "http://localhost:3001",
   "http://localhost:5173", // vite default, handy if you switch
+  "https://study-path-five.vercel.app/"
 ];
 
 app.use(
