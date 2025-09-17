@@ -32,16 +32,26 @@ const allowed = [
   "https://study-path-five.vercel.app"
 ];
 
-app.use(
-  cors({
-    origin: function (origin, cb) {
-      if (!origin) return cb(null, true); // allow Postman/no-origin
-      if (allowed.includes(origin)) return cb(null, true);
-      return cb(new Error("Not allowed by CORS: " + origin));
-    },
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, cb) {
+//       if (!origin) return cb(null, true); // allow Postman/no-origin
+//       if (allowed.includes(origin)) return cb(null, true);
+//       return cb(new Error("Not allowed by CORS: " + origin));
+//     },
+//     credentials: true,
+//   })
+// );
+const corsOptions = {
+  origin(origin, cb) {
+    if (!origin) return cb(null, true); // Postman/curl
+    if (allowed.includes(origin)) return cb(null, true);
+    return cb(new Error("Not allowed by CORS: " + origin));
+  },
+  credentials: true,
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
 
 // mount user routes
 app.use("/api/users", userRoutes);
