@@ -5,5 +5,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: { port: 3001, open: true },
+  rewrites: [{ "source": "/(.*)", "destination": "/" }]
 })
 
